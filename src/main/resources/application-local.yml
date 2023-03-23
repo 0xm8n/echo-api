@@ -1,0 +1,34 @@
+# Force ANSI color output for Windows env
+spring:
+  output:
+    ansi:
+      enabled: ALWAYS
+# Generic config
+server:
+  # Change embedded port to 8181 to avoid port conflict with Camel REST component
+  port: 8080
+endpoints:
+  # disable all management endpoints except health
+  enabled: false
+  health:
+    enabled: true
+management:
+  health:
+    defaults:
+      enabled: false
+      
+# Camel Config
+camel:
+  health:
+    enabled: false
+    indicator:
+      enabled: true
+  component:
+    servlet:
+      mapping:
+        contextPath: /v${mbix.api.version}/*
+
+# MBIX Custom Config
+mbix:
+  api:
+    version: 1

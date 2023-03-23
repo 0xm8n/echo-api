@@ -1,0 +1,9 @@
+# Startup configuration of Spring-cloud-kubernetes
+spring:
+  application:
+    name: echo-rest-api
+  cloud:
+    kubernetes:
+      reload:
+        # Disabled live reload on ConfigMap change (disabled for Secrets by default)
+        enabled: false

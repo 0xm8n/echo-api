@@ -1,0 +1,18 @@
+# Startup configuration of Spring-cloud-kubernetes
+spring:
+  application:
+    name: echo-rest-api-v1
+  cloud:
+    kubernetes:
+      reload:
+        # Disabled live reload on ConfigMap change (disabled for Secrets by default)
+        enabled: false
+#      secrets:
+#        paths: /etc/secrets/echo-rest-api
+    # Spring Cloud Config
+#    config:
+#      uri: http://${OCP_SPRING_CONFIG_HOST}:${OCP_SPRING_CONFIG_PORT}
+#      uri: http://notused:1111
+#      username: ${OCP_SPRING_CONFIG_USERNAME}
+#      password: ${OCP_SPRING_CONFIG_PASSWORD}
+#      fail-fast: true
